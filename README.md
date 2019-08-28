@@ -23,9 +23,9 @@
 You have to attach headers ```X-NACDAQ-API-KEY``` and ```X-NACDAQ-API-SECRET```, containing corresponding credentials (obtained in your profile) in your requests in order to pass API authorization. 
 #### PHP example
 ```php
-protected function ndCurl($url, $method = "GET", $data = false) {
+protected function ndCurl($url, $method = "GET", $data = false) { 
+    // i.e. $url = https://api.nacdaq.pro/api/v1/currency/list
     $ch = curl_init();
-    $url = $url; // i.e. https://api.nacdaq.pro/api/v1/currency/list
     curl_setopt($ch, CURLOPT_URL, $url);
     if ($method == "POST") {
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -36,7 +36,6 @@ protected function ndCurl($url, $method = "GET", $data = false) {
         "X-NACDAQ-API-SECRET: 12345"
     );
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    if ($method == "DELETE") curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $server_output = curl_exec($ch);
     curl_close ($ch);

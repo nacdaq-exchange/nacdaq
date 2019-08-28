@@ -16,6 +16,7 @@
 | Status code   | Explanation     | Possible solution  |
 | ------------- |:-------------:| -----:|
 | 0      | success |  |
+| 400      | Bad input data      |   Check your input parameters |
 | 403      | Authorization issue      |   Check "message" field in the response and your credentials |
 | 2000 | API issue      |    Contact us if you got this |
 
@@ -49,10 +50,40 @@ protected function ndCurl($url, $method = "GET", $data = false) {
 **GET** ```/api/v1/currency/list```<br>
 Returns actual exchange currency list
 
+
 ## Pair list
 **GET** ```/api/v1/pair/list```<br>
 Returns actual exchange pair list
 
+
+## Ticker data
+**GET** ```/api/v1/ticker```<br>
+Returns ticker data for symbol(s)
+#### Parameters list
+| Parameter  | Value     | Description  | Mandatory  |
+| ------------- |:-------------:| -----:| -----:|
+| symbol      | refer "Pair list" API method | market symbol | no |
+
+
+## Order statuses
+**GET** ```/api/v1/order/statuses```<br>
+Returns possible order statuses
+
+
 ## Wallets and balances
 **GET** ```/api/v1/wallet/own```<br>
 Returns actual balances on user's wallets
+
+
+## Own orders list
+**GET** ```/api/v1/orders/own```<br>
+Return users' orders list
+#### Parameters list
+| Parameter  | Value     | Description  | Mandatory  |
+| ------------- |:-------------:| -----:| -----:|
+| filter_sell      | 0 or 1 | sell orders only | no |
+| filter_buy      | 0 or 1  | buy orders only |   no |
+| status | refer "Order statuses" API method      | order status |   no |
+| pair | refer "Pair list" API method      | market symbol |   no |
+| limit | >0      | limit returned orders count |   no |
+

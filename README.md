@@ -96,3 +96,6 @@ Returns order's with ID = XXXXXX data
 **GET** ```/api/v1/order/cancel/XXXXXX```<br>
 Cancels order with ID = XXXXXX
 
+## Market depth
+**GET** ```/api/v1/order/marketdepth?symbol=XXX_XXX```<br>
+Return market depth for symbol XXX_XXX

@@ -18,6 +18,7 @@
 | 0      | success |  |
 | 400      | Bad input data      |   Check your input parameters |
 | 403      | Authorization issue      |   Check "message" field in the response and your credentials |
+| 404      | Not found    |   Check "message" field in the response |
 | 2000 | API issue      |    Contact us if you got this |
 
 # Authorization
@@ -76,7 +77,7 @@ Returns actual balances on user's wallets
 
 
 ## Own orders list
-**GET** ```/api/v1/orders/own```<br>
+**GET** ```/api/v1/order/own```<br>
 Return users' orders list
 #### Parameters list
 | Parameter  | Value     | Description  | Mandatory  |
@@ -86,4 +87,12 @@ Return users' orders list
 | status | refer "Order statuses" API method      | order status |   no |
 | pair | refer "Pair list" API method      | market symbol |   no |
 | limit | >0      | limit returned orders count |   no |
+
+## View order
+**GET** ```/api/v1/order/XXXXXX```<br>
+Returns order's with ID = XXXXXX data
+
+## Cancel order
+**GET** ```/api/v1/order/cancel/XXXXXX```<br>
+Cancels order with ID = XXXXXX
 

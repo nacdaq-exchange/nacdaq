@@ -99,3 +99,18 @@ Cancels order with ID = XXXXXX
 ## Market depth
 **GET** ```/api/v1/order/marketdepth?symbol=XXX_XXX```<br>
 Return market depth for symbol XXX_XXX
+#### Parameters list
+| Parameter  | Value     | Description  | Mandatory  |
+| ------------- |:-------------:| -----:| -----:|
+| symbol      | refer "Pair list" API method | market symbol | yes |
+
+## Create order
+**GET** ```/api/v1/order/create```<br>
+Creating order
+#### Parameters list
+| Parameter  | Value     | Description  | Mandatory  |
+| ------------- |:-------------:| -----:| -----:|
+| symbol      | refer "Pair list" API method | market symbol | yes |
+| price      | number | order price | yes |
+| amount      | number | order amount | yes |
+| type      | buy or sell | order type | yes |

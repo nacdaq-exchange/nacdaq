@@ -97,7 +97,7 @@ Returns order's with ID = XXXXXX data
 Cancels order with ID = XXXXXX
 
 ## Market depth
-**GET** ```/api/v1/order/marketdepth?symbol=XXX_XXX```<br>
+**GET** ```/api/v1/marketdepth?symbol=XXX_XXX```<br>
 Return market depth for symbol XXX_XXX
 #### Parameters list
 | Parameter  | Value     | Description  | Mandatory  |

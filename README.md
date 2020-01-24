@@ -22,6 +22,7 @@
 | 2000 | API issue      |    Contact us if you got this |
 
 # Authorization
+There are two request types - PUBLIC and PRIVATE. It is not necessary to attach the headers below for PUBLIC requests.
 You have to attach headers ```X-NACDAQ-API-KEY``` and ```X-NACDAQ-API-SECRET```, containing corresponding credentials (obtained in your profile) in your requests in order to pass API authorization. 
 #### PHP example
 ```php
@@ -48,17 +49,17 @@ protected function ndCurl($url, $method = "GET", $data = false) {
 # API endpoints
 ---
 ## Currency list
-**GET** ```/api/v1/currency/list```<br>
+**PUBLIC** **GET** ```/api/v1/currency/list```<br>
 Returns actual exchange currency list
 
 
 ## Pair list
-**GET** ```/api/v1/pair/list```<br>
+**PUBLIC** **GET** ```/api/v1/pair/list```<br>
 Returns actual exchange pair list
 
 
 ## Ticker data
-**GET** ```/api/v1/ticker```<br>
+**PUBLIC** **GET** ```/api/v1/ticker```<br>
 Returns ticker data for symbol(s)
 #### Parameters list
 | Parameter  | Value     | Description  | Mandatory  |
@@ -67,17 +68,17 @@ Returns ticker data for symbol(s)
 
 
 ## Order statuses
-**GET** ```/api/v1/order/statuses```<br>
+**PUBLIC** **GET** ```/api/v1/order/statuses```<br>
 Returns possible order statuses
 
 
 ## Wallets and balances
-**GET** ```/api/v1/wallet/own```<br>
+**PRIVATE** **GET** ```/api/v1/wallet/own```<br>
 Returns actual balances on user's wallets
 
 
 ## Own orders list
-**GET** ```/api/v1/order/own```<br>
+**PRIVATE** **GET** ```/api/v1/order/own```<br>
 Return users' orders list
 #### Parameters list
 | Parameter  | Value     | Description  | Mandatory  |
@@ -89,15 +90,15 @@ Return users' orders list
 | limit | >0      | limit returned orders count |   no |
 
 ## View order
-**GET** ```/api/v1/order/XXXXXX```<br>
+**PRIVATE** **GET** ```/api/v1/order/XXXXXX```<br>
 Returns order's with ID = XXXXXX data
 
 ## Cancel order
-**GET** ```/api/v1/order/cancel/XXXXXX```<br>
+**PRIVATE** **GET** ```/api/v1/order/cancel/XXXXXX```<br>
 Cancels order with ID = XXXXXX
 
 ## Market depth
-**GET** ```/api/v1/marketdepth?symbol=XXX_XXX```<br>
+**PUBLIC** **GET** ```/api/v1/marketdepth?symbol=XXX_XXX```<br>
 Return market depth for symbol XXX_XXX
 #### Parameters list
 | Parameter  | Value     | Description  | Mandatory  |
@@ -105,7 +106,7 @@ Return market depth for symbol XXX_XXX
 | symbol      | refer "Pair list" API method | market symbol | yes |
 
 ## Create order
-**GET** ```/api/v1/order/create```<br>
+**PRIVATE** **GET** ```/api/v1/order/create```<br>
 Creating order
 #### Parameters list
 | Parameter  | Value     | Description  | Mandatory  |
